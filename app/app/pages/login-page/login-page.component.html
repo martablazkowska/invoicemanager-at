@@ -1,0 +1,12 @@
+<h1>Login Page aaa</h1>
+
+<form [formGroup]="form2">
+    <div formGroupName="name">
+        <input formControlName="first" placeholder="First">
+        <input formControlName="last" placeholder="Last">
+    </div>
+    <input formControlName="email" placeholder="Email">
+    <button>Submit</button>
+</form>
+<p>Value: {{ form2.value | json }}</p>
+<p>Validation status: {{ form2.status }}</p>

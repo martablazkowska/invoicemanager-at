@@ -1,0 +1,39 @@
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Router } from '@angular/router';
+import { tokenNotExpired } from 'angular2-jwt';
+import 'rxjs/add/operator/map';
+import {Subject} from 'rxjs/Subject';
+
+@Injectable()
+export class AuthService {
+    isLoggedIn: Subject<boolean>  = new Subject<boolean>();
+    constructor(private http: Http, private router: Router) {}
+
+
+    login(username: string, password: string) {
+
+        this.http.post('/api/authenticate', {username: username, password: password})
+            .map(res => res.json())
+            .subscribe(
+                // We're assuming the response will be an object
+                // with the JWT on an token key
+                data => {
+                    localStorage.setItem('token', data.token);
+                    this.isLoggedIn.next(true);
+                    this.router.navigateByUrl('/');
+                },
+                error => console.log(error)
+            );
+    }
+
+    loggedIn() {
+        return tokenNotExpired();
+    }
+
+    logout() {
+        localStorage.removeItem('token');
+        this.isLoggedIn.next(false);
+        this.router.navigateByUrl('/');
+    }
+}
