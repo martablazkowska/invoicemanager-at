@@ -1,32 +1,26 @@
-<div class="row expanded">
-    <h2>Signup page</h2>
-</div>
-
-<div class="row align-center">
+<div class="SignUpForm">
     <form>
-        <div class="small-12 columns">
-            <label>Username
-                <input type="text" placeholder="Enter username" id="username" [(ngModel)]="username" name="username"
-                       required/>
-            </label>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter username" id="username" [(ngModel)]="username" name="username"
+                   class="form-control" required/>
         </div>
-        <div class="small-12 columns">
-            <label>Password
-                <input type="password" placeholder="Enter password" id="password1" [(ngModel)]="password1"
-                       name="password1"
-                       required/>
-            </label>
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" placeholder="Enter password" id="password1" [(ngModel)]="password1"
+                   name="password1"
+                   class="form-control" required/>
         </div>
-        <div class="small-12 columns">
-            <label>Confirm Password
-                <input type="password" placeholder="Enter password" id="password2" [(ngModel)]="password2"
-                       name="password2"
-                       required/>
-            </label>
+        <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" placeholder="Enter password" id="password2" [(ngModel)]="password2"
+                   name="password2"
+                   class="form-control" required/>
         </div>
         <div *ngIf="passwordFailed">Passwords do not match</div>
-        <div class="small-12 columns">
-            <a (click)="register()" class="button success">Sign Up</a>
-        </div>
     </form>
+
+    <div>
+        <button (click)="register()" class="btn btn-primary">Sign Up</button>
+    </div>
 </div>

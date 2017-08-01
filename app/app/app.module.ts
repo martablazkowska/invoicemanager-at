@@ -9,6 +9,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { InvoicesPageComponent } from './pages/invoices-page/invoices-page.component';
 import { Error404PageComponent } from './pages/error-404/error-404-page.component';
 import {AppRoutingModule} from './shared/app.routing';
 import {AdminModule} from './admin/admin.module';
@@ -23,6 +24,7 @@ import { UserService } from './shared/user.service';
     AppComponent,
     HeaderComponent,
     HomePageComponent,
+    InvoicesPageComponent,
     Error404PageComponent
   ],
   imports: [

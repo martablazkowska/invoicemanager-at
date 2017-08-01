@@ -1,28 +1,20 @@
-<div class="row expanded">
-    <h2>Login page</h2>
-</div>
-
-<div class="row align-center">
+<div class="LoginForm">
     <form>
-        <div class="small-12 columns">
-            <label>Username
-                <input type="text" placeholder="Enter username" id="username" [(ngModel)]="username" name="username"
-                       required/>
-            </label>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter username" id="username" [(ngModel)]="username" name="username"
+                   class="form-control" required/>
         </div>
-        <div class="small-12 columns">
-            <label>Password
-                <input type="password" placeholder="Enter password" id="password1" [(ngModel)]="password1"
-                       name="password1"
-                       required/>
-            </label>
-        </div>
-        <div class="small-12 columns">
-            <a (click)="login()" class="button success">Login</a>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter password" id="password" [(ngModel)]="password1"
+                   name="password1" class="form-control"
+                   required/>
         </div>
     </form>
-</div>
 
-<div>
-    <a routerLink="/admin/signup">Sign Up</a>
+    <div>
+        <button (click)="login()" class="btn btn-primary">Login</button>
+        <a routerLink="/admin/signup" class="btn btn-outline-primary float-right">Sign Up</a>
+    </div>
 </div>

@@ -14,6 +14,9 @@
             <li class="nav-item" *ngIf="!isUserLoggedIn">
                 <a class="nav-link" routerLink="/admin/signup" routerLinkActive="active">Register</a>
             </li>
+            <li class="nav-item" *ngIf="isUserLoggedIn">
+                <a class="nav-link" routerLink="/invoices" routerLinkActive="active">Invoices</a>
+            </li>
             <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     User
